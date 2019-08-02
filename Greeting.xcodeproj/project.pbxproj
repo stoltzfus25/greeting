@@ -8,8 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		7EBD84C122F47F5F0015AD7A /* Greeting.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EBD84B722F47F5F0015AD7A /* Greeting.framework */; };
-		7EBD84C622F47F5F0015AD7A /* GreetingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EBD84C522F47F5F0015AD7A /* GreetingTests.swift */; };
-		7EBD84C822F47F5F0015AD7A /* Greeting.h in Headers */ = {isa = PBXBuildFile; fileRef = 7EBD84BA22F47F5F0015AD7A /* Greeting.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -24,10 +22,8 @@
 
 /* Begin PBXFileReference section */
 		7EBD84B722F47F5F0015AD7A /* Greeting.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Greeting.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		7EBD84BA22F47F5F0015AD7A /* Greeting.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Greeting.h; sourceTree = "<group>"; };
 		7EBD84BB22F47F5F0015AD7A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7EBD84C022F47F5F0015AD7A /* GreetingTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GreetingTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		7EBD84C522F47F5F0015AD7A /* GreetingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GreetingTests.swift; sourceTree = "<group>"; };
 		7EBD84C722F47F5F0015AD7A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -71,7 +67,6 @@
 		7EBD84B922F47F5F0015AD7A /* Greeting */ = {
 			isa = PBXGroup;
 			children = (
-				7EBD84BA22F47F5F0015AD7A /* Greeting.h */,
 				7EBD84BB22F47F5F0015AD7A /* Info.plist */,
 			);
 			path = Greeting;
@@ -80,7 +75,6 @@
 		7EBD84C422F47F5F0015AD7A /* GreetingTests */ = {
 			isa = PBXGroup;
 			children = (
-				7EBD84C522F47F5F0015AD7A /* GreetingTests.swift */,
 				7EBD84C722F47F5F0015AD7A /* Info.plist */,
 			);
 			path = GreetingTests;
@@ -93,7 +87,6 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7EBD84C822F47F5F0015AD7A /* Greeting.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -201,7 +194,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7EBD84C622F47F5F0015AD7A /* GreetingTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		7EBD84C122F47F5F0015AD7A /* Greeting.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EBD84B722F47F5F0015AD7A /* Greeting.framework */; };
+		7EBD84D222F480B50015AD7A /* GreetingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EBD84D122F480B50015AD7A /* GreetingTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -25,6 +26,7 @@
 		7EBD84BB22F47F5F0015AD7A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7EBD84C022F47F5F0015AD7A /* GreetingTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GreetingTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7EBD84C722F47F5F0015AD7A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7EBD84D122F480B50015AD7A /* GreetingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GreetingTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,6 +78,7 @@
 			isa = PBXGroup;
 			children = (
 				7EBD84C722F47F5F0015AD7A /* Info.plist */,
+				7EBD84D122F480B50015AD7A /* GreetingTests.swift */,
 			);
 			path = GreetingTests;
 			sourceTree = "<group>";
@@ -144,6 +147,7 @@
 					};
 					7EBD84BF22F47F5F0015AD7A = {
 						CreatedOnToolsVersion = 10.3;
+						LastSwiftMigration = 1030;
 					};
 				};
 			};
@@ -194,6 +198,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7EBD84D222F480B50015AD7A /* GreetingTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -384,6 +389,7 @@
 		7EBD84CF22F47F5F0015AD7A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = W33E469WY4;
@@ -395,6 +401,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.superiorplasticproducts.GreetingTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
@@ -402,6 +409,7 @@
 		7EBD84D022F47F5F0015AD7A /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = W33E469WY4;

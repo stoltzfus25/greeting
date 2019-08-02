@@ -17,7 +17,7 @@ class Greeting {
         }
         
         if names.count == 2 {
-            return "Hello, Jill and Jane."
+            return "Hello, \(names[0]) and \(names[1])."
         } else {
             if names[0].uppercased() == names[0] {
                 return "HELLO, \(names[0].uppercased())!"

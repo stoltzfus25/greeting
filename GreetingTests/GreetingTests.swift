@@ -34,5 +34,6 @@ class GreetingTests: XCTestCase {
     
     func testArrayOfNames_GreetsAllNames() {
         XCTAssertEqual(sut.greet(["Jill", "Jane"]), "Hello, Jill and Jane.")
+        XCTAssertEqual(sut.greet(["Jack", "Jill"]), "Hello, Jack and Jill.")
     }
 }

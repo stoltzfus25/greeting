@@ -9,5 +9,7 @@
 import Foundation
 
 class Greeting {
-    
+    func greet(_ name: String) -> String {
+        return "Hello, \(name)."
+    }
 }

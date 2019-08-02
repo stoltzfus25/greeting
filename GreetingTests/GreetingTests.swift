@@ -13,4 +13,8 @@ class GreetingTests: XCTestCase {
 
     let sut = Greeting()
 
+    func testName_GreetsName() {
+        XCTAssertEqual(sut.greet("Bob"), "Hello, Bob.")
+        XCTAssertEqual(sut.greet("Nancy"), "Hello, Nancy.")
+    }
 }

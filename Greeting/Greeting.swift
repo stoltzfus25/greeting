@@ -9,13 +9,13 @@
 import Foundation
 
 class Greeting {
-    func greet(_ name: [String]? = nil) -> String {
+    func greet(_ names: [String]? = nil) -> String {
         let standInName = "my friend"
         
-        if let n = name, n.count == 2 {
+        if let n = names, n.count == 2 {
             return "Hello, Jill and Jane."
         } else {
-            if let n = name, !n.isEmpty {
+            if let n = names, !n.isEmpty {
                 if n[0].uppercased() == n[0] {
                     return "HELLO, \(n[0].uppercased())!"
                 } else {

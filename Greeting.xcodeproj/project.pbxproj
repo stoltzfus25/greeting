@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		7EBD84C122F47F5F0015AD7A /* Greeting.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EBD84B722F47F5F0015AD7A /* Greeting.framework */; };
 		7EBD84D222F480B50015AD7A /* GreetingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EBD84D122F480B50015AD7A /* GreetingTests.swift */; };
+		7EBD84D422F481370015AD7A /* Greeting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EBD84D322F481370015AD7A /* Greeting.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -27,6 +28,7 @@
 		7EBD84C022F47F5F0015AD7A /* GreetingTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GreetingTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7EBD84C722F47F5F0015AD7A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7EBD84D122F480B50015AD7A /* GreetingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GreetingTests.swift; sourceTree = "<group>"; };
+		7EBD84D322F481370015AD7A /* Greeting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Greeting.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +72,7 @@
 			isa = PBXGroup;
 			children = (
 				7EBD84BB22F47F5F0015AD7A /* Info.plist */,
+				7EBD84D322F481370015AD7A /* Greeting.swift */,
 			);
 			path = Greeting;
 			sourceTree = "<group>";
@@ -144,6 +147,7 @@
 				TargetAttributes = {
 					7EBD84B622F47F5F0015AD7A = {
 						CreatedOnToolsVersion = 10.3;
+						LastSwiftMigration = 1030;
 					};
 					7EBD84BF22F47F5F0015AD7A = {
 						CreatedOnToolsVersion = 10.3;
@@ -191,6 +195,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7EBD84D422F481370015AD7A /* Greeting.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -337,6 +342,7 @@
 		7EBD84CC22F47F5F0015AD7A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
@@ -356,6 +362,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.superiorplasticproducts.Greeting;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
@@ -363,6 +370,7 @@
 		7EBD84CD22F47F5F0015AD7A /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
@@ -389,6 +397,7 @@
 		7EBD84CF22F47F5F0015AD7A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
@@ -409,6 +418,7 @@
 		7EBD84D022F47F5F0015AD7A /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;

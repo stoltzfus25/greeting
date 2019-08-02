@@ -7,9 +7,10 @@
 //
 
 import XCTest
+@testable import Greeting
 
 class GreetingTests: XCTestCase {
 
-    
+    let sut = Greeting()
 
 }

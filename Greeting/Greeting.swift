@@ -12,17 +12,17 @@ class Greeting {
     func greet(_ names: [String]? = nil) -> String {
         let standInName = "my friend"
         
-        if let n = names, n.count == 2 {
+        guard let names = names, !names.isEmpty else {
+            return "Hello, \(standInName)."
+        }
+        
+        if names.count == 2 {
             return "Hello, Jill and Jane."
         } else {
-            if let n = names, !n.isEmpty {
-                if n[0].uppercased() == n[0] {
-                    return "HELLO, \(n[0].uppercased())!"
-                } else {
-                    return "Hello, \(n[0])."
-                }
+            if names[0].uppercased() == names[0] {
+                return "HELLO, \(names[0].uppercased())!"
             } else {
-                return "Hello, \(standInName)."
+                return "Hello, \(names[0])."
             }
         }
     }

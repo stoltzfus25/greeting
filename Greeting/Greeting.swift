@@ -10,6 +10,10 @@ import Foundation
 
 class Greeting {
     func greet(_ name: String? = nil) -> String {
-        return "Hello, \(name ?? "my friend")."
+        if let n = name?.uppercased(), n == name {
+            return "HELLO, \(n)!"
+        } else {
+            return "Hello, \(name ?? "my friend")."
+        }
     }
 }

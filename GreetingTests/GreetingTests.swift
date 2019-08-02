@@ -21,4 +21,13 @@ class GreetingTests: XCTestCase {
     func testNull_GreetsStandIn() {
         XCTAssertEqual(sut.greet(), "Hello, my friend.")
     }
+    
+    func testAllUppercase_GreetsWithShouting() {
+        XCTAssertEqual(sut.greet("JERRY"), "HELLO, JERRY!")
+        XCTAssertEqual(sut.greet("BILL"), "HELLO, BILL!")
+    }
+    
+    func testSomeUppercase_DoesNotGreetWithShouting() {
+        XCTAssertEqual(sut.greet("JeRRY"), "Hello, JeRRY.")
+    }
 }

@@ -17,4 +17,8 @@ class GreetingTests: XCTestCase {
         XCTAssertEqual(sut.greet("Bob"), "Hello, Bob.")
         XCTAssertEqual(sut.greet("Nancy"), "Hello, Nancy.")
     }
+    
+    func testNull_GreetsStandIn() {
+        XCTAssertEqual(sut.greet(), "Hello, my friend.")
+    }
 }

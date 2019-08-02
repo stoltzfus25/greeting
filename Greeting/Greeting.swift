@@ -9,7 +9,7 @@
 import Foundation
 
 class Greeting {
-    func greet(_ name: String) -> String {
-        return "Hello, \(name)."
+    func greet(_ name: String? = nil) -> String {
+        return "Hello, \(name ?? "my friend")."
     }
 }

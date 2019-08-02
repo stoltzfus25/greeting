@@ -10,10 +10,12 @@ import Foundation
 
 class Greeting {
     func greet(_ name: String? = nil) -> String {
+        let standInName = "my friend"
+        
         if let n = name?.uppercased(), n == name {
             return "HELLO, \(n)!"
         } else {
-            return "Hello, \(name ?? "my friend")."
+            return "Hello, \(name ?? standInName)."
         }
     }
 }

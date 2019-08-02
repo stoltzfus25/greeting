@@ -13,17 +13,21 @@ class Greeting {
         let standInName = "my friend"
         
         guard let names = names, !names.isEmpty else {
-            return "Hello, \(standInName)."
+            return sayHello(names: [standInName])
         }
         
-        if names.count == 2 {
-            return "Hello, \(names[0]) and \(names[1])."
-        } else {
-            if names[0].uppercased() == names[0] {
-                return "HELLO, \(names[0].uppercased())!"
-            } else {
-                return "Hello, \(names[0])."
-            }
+        if names[0].uppercased() == names[0] {
+            return shoutHello(name: names[0])
         }
+        
+        return sayHello(names: names)
+    }
+    
+    private func sayHello(names: [String]) -> String {
+        return "Hello, \(names.joined(separator: " and "))."
+    }
+    
+    private func shoutHello(name: String) -> String {
+        return "HELLO, \(name.uppercased())!"
     }
 }

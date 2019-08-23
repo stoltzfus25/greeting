@@ -11,41 +11,48 @@ import Foundation
 class Greeting {
     
     func greet(_ name: String? = nil) -> String {
-        guard let name = name else { return greet([]) }
-        return greet([name])
+        let name = name ?? "my friend"
+        return name.isUpperCased ? shoutHello(name: name) : sayHello(name: name)
     }
     
     func greet(_ names: [String]) -> String {
-        let defaultGreeting = "my friend"
-        
-        guard !names.isEmpty else {
-            return sayHello(names: [defaultGreeting])
-        }
-        
-        if names[0].uppercased() == names[0] {
-            return shoutHello(name: names[0])
-        }
-        
-        return sayHello(names: names)
-    }
-    
-    private func sayHello(names: [String]) -> String {
         guard names.count > 1 else {
-            return sayHelloSeparator(names: names, separator: "")
+            return greet(names.first)
         }
         
-        var newNames = names
-        newNames[newNames.count - 1] = "and \(newNames.last!)"
+        let lowercasedNames = names.filter { !$0.isUpperCased }
+        let uppercasedNames = names.filter { $0.isUpperCased }
         
-        let separator = names.count > 2 ? ", " : " "
-        return sayHelloSeparator(names: newNames, separator: separator)
+        let joinedNames = joinMultipleNames(names: lowercasedNames)
+        if uppercasedNames.isEmpty {
+            return sayHello(name: joinedNames)
+        } else {
+            return "\(sayHello(name: joinedNames)) AND HELLO \(uppercasedNames[0])!"
+        }
     }
     
-    private func sayHelloSeparator(names: [String], separator: String) -> String {
-        return "Hello, \(names.joined(separator: separator))."
+    private func joinMultipleNames(names: [String]) -> String {
+        switch names.count {
+        case 0...2:
+            return names.joined(separator: " and ")
+        default:
+            var newNames = names
+            newNames[newNames.count - 1] = "and \(newNames.last!)"
+            return newNames.joined(separator: ", ")
+        }
+    }
+    
+    private func sayHello(name: String) -> String {
+        return "Hello, \(name)."
     }
     
     private func shoutHello(name: String) -> String {
         return "HELLO, \(name.uppercased())!"
+    }
+}
+
+extension String {
+    var isUpperCased: Bool {
+        return self.uppercased() == self
     }
 }

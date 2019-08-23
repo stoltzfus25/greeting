@@ -41,4 +41,9 @@ class GreetingTests: XCTestCase {
         XCTAssertEqual(sut.greet(["Amy", "Brian", "Charlotte"]), "Hello, Amy, Brian, and Charlotte.")
         XCTAssertEqual(sut.greet(["Amy", "Brian", "Charlotte", "Donald"]), "Hello, Amy, Brian, Charlotte, and Donald.")
     }
+    
+    func testOneUpperCaseName_GreetsUppercaseNameSeparately() {
+        XCTAssertEqual(sut.greet(["Amy", "BRIAN", "Charlotte"]), "Hello, Amy and Charlotte. AND HELLO BRIAN!")
+        XCTAssertEqual(sut.greet(["SAMUEL", "Aaron", "Gideon"]), "Hello, Aaron and Gideon. AND HELLO SAMUEL!")
+    }
 }

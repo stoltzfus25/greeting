@@ -9,11 +9,17 @@
 import Foundation
 
 class Greeting {
-    func greet(_ names: [String]? = nil) -> String {
-        let standInName = "my friend"
+    
+    func greet(_ name: String? = nil) -> String {
+        guard let name = name else { return greet([]) }
+        return greet([name])
+    }
+    
+    func greet(_ names: [String]) -> String {
+        let defaultGreeting = "my friend"
         
-        guard let names = names, !names.isEmpty else {
-            return sayHello(names: [standInName])
+        guard !names.isEmpty else {
+            return sayHello(names: [defaultGreeting])
         }
         
         if names[0].uppercased() == names[0] {
@@ -24,7 +30,19 @@ class Greeting {
     }
     
     private func sayHello(names: [String]) -> String {
-        return "Hello, \(names.joined(separator: " and "))."
+        guard names.count > 1 else {
+            return sayHelloSeparator(names: names, separator: "")
+        }
+        
+        var newNames = names
+        newNames[newNames.count - 1] = "and \(newNames.last!)"
+        
+        let separator = names.count > 2 ? ", " : " "
+        return sayHelloSeparator(names: newNames, separator: separator)
+    }
+    
+    private func sayHelloSeparator(names: [String], separator: String) -> String {
+        return "Hello, \(names.joined(separator: separator))."
     }
     
     private func shoutHello(name: String) -> String {

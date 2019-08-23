@@ -14,8 +14,8 @@ class GreetingTests: XCTestCase {
     let sut = Greeting()
 
     func testName_GreetsName() {
-        XCTAssertEqual(sut.greet(["Bob"]), "Hello, Bob.")
-        XCTAssertEqual(sut.greet(["Nancy"]), "Hello, Nancy.")
+        XCTAssertEqual(sut.greet("Bob"), "Hello, Bob.")
+        XCTAssertEqual(sut.greet("Nancy"), "Hello, Nancy.")
     }
     
     func testNull_GreetsStandIn() {
@@ -24,16 +24,21 @@ class GreetingTests: XCTestCase {
     }
     
     func testAllUppercase_GreetsWithShouting() {
-        XCTAssertEqual(sut.greet(["JERRY"]), "HELLO, JERRY!")
-        XCTAssertEqual(sut.greet(["BILL"]), "HELLO, BILL!")
+        XCTAssertEqual(sut.greet("JERRY"), "HELLO, JERRY!")
+        XCTAssertEqual(sut.greet("BILL"), "HELLO, BILL!")
     }
     
     func testSomeUppercase_DoesNotGreetWithShouting() {
-        XCTAssertEqual(sut.greet(["JeRRY"]), "Hello, JeRRY.")
+        XCTAssertEqual(sut.greet("JeRRY"), "Hello, JeRRY.")
     }
     
-    func testArrayOfNames_GreetsAllNames() {
+    func testTwoNames_GreetsAllNames() {
         XCTAssertEqual(sut.greet(["Jill", "Jane"]), "Hello, Jill and Jane.")
         XCTAssertEqual(sut.greet(["Jack", "Jill"]), "Hello, Jack and Jill.")
+    }
+    
+    func testThreeOrMoreNames_GreetsAllNamesWithOxfordComma() {
+        XCTAssertEqual(sut.greet(["Amy", "Brian", "Charlotte"]), "Hello, Amy, Brian, and Charlotte.")
+        XCTAssertEqual(sut.greet(["Amy", "Brian", "Charlotte", "Donald"]), "Hello, Amy, Brian, Charlotte, and Donald.")
     }
 }

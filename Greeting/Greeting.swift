@@ -10,15 +10,17 @@ import Foundation
 
 class Greeting {
     
-    func greet(_ name: String? = nil) -> String {
-        let name = name ?? "my friend"
-        return name.isUpperCased ? shoutHello(name: name) : sayHello(name: name)
-    }
+    private let defaultName = "my friend"
     
-    func greet(_ names: [String]) -> String {
-        let names = names.joined(separator: ",").split(separator: ",").map { $0.trimmingCharacters(in: .whitespacesAndNewlines) }
+    func greet(_ names: [String]? = nil) -> String {
+        let names = sanitizeNames(names)
+        
+        guard !names.isEmpty, let firstName = names.first else {
+            return sayHello(name: defaultName)
+        }
+        
         guard names.count > 1 else {
-            return greet(names.first)
+            return firstName.isUpperCased ? shoutHello(name: firstName) : sayHello(name: firstName)
         }
         
         let lowercasedNames = names.filter { !$0.isUpperCased }
@@ -49,6 +51,10 @@ class Greeting {
     
     private func shoutHello(name: String) -> String {
         return "HELLO, \(name.uppercased())!"
+    }
+    
+    private func sanitizeNames(_ names: [String]?) -> [String] {
+        return names?.joined(separator: ",").split(separator: ",").map { $0.trimmingCharacters(in: .whitespacesAndNewlines) } ?? []
     }
 }
 

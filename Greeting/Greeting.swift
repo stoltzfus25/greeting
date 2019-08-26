@@ -16,6 +16,7 @@ class Greeting {
     }
     
     func greet(_ names: [String]) -> String {
+        let names = names.joined(separator: ",").split(separator: ",").map { $0.trimmingCharacters(in: .whitespacesAndNewlines) }
         guard names.count > 1 else {
             return greet(names.first)
         }

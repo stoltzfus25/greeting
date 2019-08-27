@@ -55,15 +55,15 @@ class Greeting {
     
     private func sanitizeNames(_ names: [String]?) -> [String] {
         var newNames = [String]()
-        
+
         for name in names ?? [] {
             if name.starts(with: "\"") {
-                newNames.append(name.trimmingCharacters(in: ["\""]))
+                newNames.append(name.trim(character: "\""))
             } else {
-                newNames.append(contentsOf: name.split(separator: ",").map{ $0.trimmingCharacters(in: .whitespacesAndNewlines) } )
+                newNames.append(contentsOf: name.split(separator: ",").map { "\($0)".trim() } )
             }
         }
-        
+
         return newNames
     }
 }
@@ -71,5 +71,13 @@ class Greeting {
 extension String {
     var isUpperCased: Bool {
         return self.uppercased() == self
+    }
+    
+    func trim(character: String? = nil) -> String {
+        guard let char = character else {
+            return self.trimmingCharacters(in: .whitespacesAndNewlines)
+        }
+        
+        return self.trimmingCharacters(in: CharacterSet(charactersIn: char))
     }
 }

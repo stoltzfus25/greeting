@@ -54,7 +54,17 @@ class Greeting {
     }
     
     private func sanitizeNames(_ names: [String]?) -> [String] {
-        return names?.joined(separator: ",").split(separator: ",").map { $0.trimmingCharacters(in: .whitespacesAndNewlines) } ?? []
+        var newNames = [String]()
+        
+        for name in names ?? [] {
+            if name.starts(with: "\"") {
+                newNames.append(name.trimmingCharacters(in: ["\""]))
+            } else {
+                newNames.append(contentsOf: name.split(separator: ",").map{ $0.trimmingCharacters(in: .whitespacesAndNewlines) } )
+            }
+        }
+        
+        return newNames
     }
 }
 

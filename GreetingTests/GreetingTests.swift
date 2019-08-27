@@ -49,7 +49,7 @@ class GreetingTests: XCTestCase {
     
     func testNameHasComma_SplitsOnComma() {
         XCTAssertEqual(sut.greet(["Bob", "Charlie, Dianne"]), "Hello, Bob, Charlie, and Dianne.")
-        XCTAssertEqual(sut.greet(["Jeff, Kayla", "Lydia"]), "Hello, Jeff, Kayla, and Lydia.")
+        XCTAssertEqual(sut.greet(["Jeff, Kayla"]), "Hello, Jeff and Kayla.")
     }
     
     func testNameHasEscapedComma_DoesNotSplit() {
